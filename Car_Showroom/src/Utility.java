@@ -1,4 +1,4 @@
 public interface Utility {
     void getDetails();
-    void setDetails();
+    //void setDetails();
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Showroom implements Utility{
@@ -6,8 +8,11 @@ public class Showroom implements Utility{
     private String manager_name;
     private static int total_cars;
     private static int total_employees;
+    private List<Car> cars = new ArrayList<Car>();
 
-    public Showroom(){
+
+    @Override
+    public void getDetails() {
         System.out.println("=================================== *** ENTER SHOWROOM DETAILS *** ===================================");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Showroom name: ");
@@ -18,30 +23,20 @@ public class Showroom implements Utility{
         this.manager_name = sc.nextLine();
     }
 
-    @Override
-    public void getDetails() {
-//        System.out.println("Showroom Name: "+this.name);
-//        System.out.println("Showroom Address: "+this.address);
-//        System.out.println("Manager Name: "+this.manager_name);
-//        System.out.println("Total Cars: "+this.total_cars);
-//        System.out.println("Total Employees: "+this.total_employees);
+    public void addCarToList(Car car){
+        cars.add(car);
     }
 
-    @Override
-    public void setDetails() {
-        //System.out.println("=================================== *** ENTER SHOWROOM DETAILS *** ===================================");
-//        Scanner sc = new Scanner(System.in);
-//        System.out.print("Enter Showroom name: ");
-//        this.name = sc.nextLine();
-//        System.out.print("Enter Showroom address: ");
-//        this.address = sc.nextLine();
-//        System.out.print("Enter Manager name: ");
-//        this.manager_name = sc.nextLine();
+    public void remove(String c){
+        cars.removeIf(p -> p.getCar_name().equals(name));
     }
 
+    public List getCars(){
+        return cars;
+    }
     @Override
     public String toString() {
         //getDetails();
-        return "Showroom Details\nShowroom Name:      "+this.name+"\nShowroom Adress:    "+this.address+"\nManager Name:       "+this.manager_name;
+        return "Showroom Name:      "+this.name+"\nShowroom Adress:    "+this.address+"\nManager Name:       "+this.manager_name;
     }
 }

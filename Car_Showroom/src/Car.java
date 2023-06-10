@@ -7,17 +7,22 @@ public class Car extends Showroom implements Utility{
     private String color;
     private static int total_cars=0;
 
-    @Override
-    public void getDetails() {
-        System.out.println("Car Name: "+this.car_name);
-        System.out.println("Car Type: "+this.car_type);
-        System.out.println("Car Color: "+this.color);
-        System.out.println("Fuel Type: "+this.fuel_type);
-        System.out.println("Total Cars: "+this.total_cars);
+    public static int getTotal_cars() {
+        return total_cars;
     }
 
+    public String getCar_name() {
+        return car_name;
+    }
+//
+//    public static void setTotal_cars(int total_cars) {
+//        Car.total_cars = total_cars;
+//    }
+
     @Override
-    public void setDetails() {
+    public void getDetails() {
+//        int tc=getTotal_cars();
+//        setTotal_cars(++tc);
         total_cars++;
         System.out.println("=================================== *** ENTER CAR DETAILS *** ===================================");
         Scanner sc = new Scanner(System.in);
@@ -29,5 +34,17 @@ public class Car extends Showroom implements Utility{
         this.color = sc.nextLine();
         System.out.println("Fuel Type: ");
         this.fuel_type = sc.nextLine();
+    }
+
+    @Override
+    public void remove(String c){
+        super.remove(c);
+        System.out.println("Deleted "+c+" from List");
+    }
+
+    @Override
+    public String toString() {
+        //getDetails();
+        return "\nCar Name:      "+this.car_name+"\nCar type:      "+this.car_type+"\nCar Color:    "+this.color+"\nFuel Type:    "+this.fuel_type+"\n";
     }
 }
