@@ -14,15 +14,9 @@ public class Car extends Showroom implements Utility{
     public String getCar_name() {
         return car_name;
     }
-//
-//    public static void setTotal_cars(int total_cars) {
-//        Car.total_cars = total_cars;
-//    }
 
     @Override
     public void getDetails() {
-//        int tc=getTotal_cars();
-//        setTotal_cars(++tc);
         total_cars++;
         System.out.println("=================================== *** ENTER CAR DETAILS *** ===================================");
         Scanner sc = new Scanner(System.in);

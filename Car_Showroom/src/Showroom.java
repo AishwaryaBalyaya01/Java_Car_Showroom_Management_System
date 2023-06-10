@@ -36,7 +36,6 @@ public class Showroom implements Utility{
     }
     @Override
     public String toString() {
-        //getDetails();
         return "Showroom Name:      "+this.name+"\nShowroom Adress:    "+this.address+"\nManager Name:       "+this.manager_name;
     }
 }

@@ -30,7 +30,6 @@ public class Employee extends Showroom implements Utility{
 
     @Override
     public String toString() {
-        //getDetails();
         return "\nEmployee Id:      "+this.employee_id+"\nEmployee Name:      "+this.employee_name+"\nEmployee Age:    "+this.employee_age+"\nDepartment:     "+this.department+"\n";
     }
 }
